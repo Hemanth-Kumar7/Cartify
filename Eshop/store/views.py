@@ -5,20 +5,19 @@ from django.views.generic import View
 from .models import Category, Customer, Products, Order #store = package
 from django.contrib.auth.hashers import make_password, check_password
 import requests
+
+import os
+import json
+from django.conf import settings
+
 # Create your views here.
 
 class Index(View):
     def get(self, request):
 
-        try:
-            response = requests.get('https://fakestoreapi.com/products')
-            products = response.json()
-
-        except requests.exceptions.RequestException as e:   # When Connection is not proper
-            print("API ERROR:", e)  # Log to console for debugging
-            error_message = "⚠️ Oops! We couldn't load products. Please check your internet connection."
-            return render(request,'store/notfound.html',{'error_message':error_message})
-            #return HttpResponse("<div><h3>⚠️ Oops! We couldn't load products. Please check your internet connection.</h3></div>")
+        file_path = os.path.join(settings.BASE_DIR, 'store', 'products.json')
+        with open(file_path, 'r') as f:
+            products = json.load(f)
 
 
         print("Index API Executed")

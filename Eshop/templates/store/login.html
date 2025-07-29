@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% extends 'store/base.html' %}
+{% block body_block %}
+{% load static %}
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+    <h1 class="text-center text-primary mt-3">Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container text-align justify-content-center w-50 rounded">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" placeholder="Enter email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" placeholder="Enter your password" class="form-control" required>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .login-container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .error {
+            color: red;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required> <br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter your password" required> <br>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html> -->

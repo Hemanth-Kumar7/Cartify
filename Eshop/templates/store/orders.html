@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'store/base.html' %}
+{% block body_block %}
+{% load custom_filters %}
+<div class="container my-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>SI.No</th>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Customer Address</th>
+                    <th>Phone Number</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>  <!-- Serail Number -->
+                        <td>{{ order.product.name }}</td>
+                        <td><img src="{{ order.product.image }}" width="60" class="img-fluid rounded"></td>
+                        <td>{{ order.quantity }}</td>
+                        <td>₹{{ order.price }}</td>
+                        <td>₹{{ order.price|multiply:order.quantity }}</td>
+                        <td>{{ order.address }}</td>
+                        <td>{{ order.phone }}</td>
+                        <td>{{ order.date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

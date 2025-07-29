@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0">
+        <title>E-Commerce</title>
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- JS Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+        <!-- external css -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+    <!-- NavBar
+     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+         <div class="container-fluid">
+
+             Toggler for mobile
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+             Brand
+             <div class="mx-5">
+                <a class="navbar-brand fs-2" href="#">E-<span class="text-primary"><b>Shop</b></span></a>
+             </div>
+
+             Links
+             <div class="collapse navbar-collapse mx-5" id="navbarNavDropdown">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/cart">Cart <span class="sr-only shadow"> [ {{ cart_item_count|default:0 }} ]</span></a>
+                    </li>
+                    <li class="navbar-item">
+                      <a class="nav-link" href="/signup">Signup</a>
+                    </li>
+                    <li class="navbar-item">
+                      <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="navbar-item">
+                      <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"  href="/category?category=men's clothing">Men's Clothing</a></li>
+                            <li><a class="dropdown-item" href="/category?category=electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" href="/category?category=jewelery">Jewelery</a></li>
+                            <li><a class="dropdown-item" href="/category?category=women's clothing">Women's Clothing</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+            </div>
+         </div>
+       </nav> -->
+     <!-- <nav class="navbar bg-body-tertiary fixed-top">
+         <div class="container-fluid">
+             <a class="navbar-brand" href="#">E-SHOP</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+                 <div class="offcanvas-header">
+                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Eshop</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 </div>
+
+                 <div class="offcanvas-body">
+                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                         <li class="nav-item">
+                             <a class="nav-link active" aria-current="page" href="/">Home</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="/products">Products</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="/products"></a>
+                         </li>
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 Dropdown
+                             </a>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Action</a></li>
+                                 <li><a class="dropdown-item" href="#">Another action</a></li>
+                                 <li><hr class="dropdown-divider"></li>
+                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                     <form class="d-flex mt-3" role="search">
+                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                         <button class="btn btn-outline-success" type="submit">Search</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </nav> -->
+
+   <!-- <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid px-4">
+
+    <!-- Brand -->
+    <a class="navbar-brand fs-3 fw-bold" href="/">
+      <i class="bi bi-shop text-primary"></i> E-Shop
+    </a>
+
+    <!-- Mobile Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarIcons"
+      aria-controls="navbarIcons" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarIcons">
+
+      <!-- Left Nav Items -->
+      <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="bi bi-house-door me-1"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products"><i class="bi bi-box-seam me-1"></i> Products</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-tags me-1"></i> Categories
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="/category?category=men's clothing">Men's Clothing</a></li>
+            <li><a class="dropdown-item" href="/category?category=electronics">Electronics</a></li>
+            <li><a class="dropdown-item" href="/category?category=jewelery">Jewelery</a></li>
+            <li><a class="dropdown-item" href="/category?category=women's clothing">Women's Clothing</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right Side Icons -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="/cart" class="text-white position-relative text-decoration-none">
+          <i class="bi bi-cart fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+             {{ cart_item_count|default:0 }}
+          </span>
+        </a>
+        <a href="/signup" class="text-white text-decoration-none"><i class="bi bi-person-plus fs-5"> Signup</i></a>
+        <a href="/login" class="text-white text-decoration-none"><i class="bi bi-box-arrow-in-right fs-5"> Login</i></a>
+        <a href="/logout" class="text-white text-decoration-none"><i class="bi bi-box-arrow-right fs-5"> Logout</i></a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+     <!-- Template Inheritance -->
+     {% block body_block %}
+     {% endblock %}
+    </body>
+</html>
